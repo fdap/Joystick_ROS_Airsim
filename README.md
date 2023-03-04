@@ -26,4 +26,4 @@ roslaunch joystick_control system_airsim.launch
 
 <div align="center"> <img src="/img/joystick.jpg" width = 500 height = 350 /> </div>
 
-you can modify the code according to the buttons and axes of the joystick to meet your requirement. Joyful journey for steering :smiley:
+you can modify the code according to the buttons and axes of the joystick to meet your requirement. Joyful journey to steer :smiley:

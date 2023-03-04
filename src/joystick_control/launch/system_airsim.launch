@@ -1,0 +1,41 @@
+<launch>
+
+  <arg name="stateEstimationTopic" default="/state_estimation"/>
+  <arg name="depthCloudTopic" default="/airsim_node/drone0/cam/DepthCloud"/>
+  <arg name="depthCloudDelay" default="0"/>
+  <arg name="depthCamPitchOffset" default="0"/>
+  <arg name="depthCamXOffset" default="0.3"/>
+  <arg name="depthCamYOffset" default="0"/>
+  <arg name="depthCamZOffset" default="0"/>
+  <arg name="trackingCamBackward" default="false"/>
+  <arg name="trackingCamXOffset" default="0"/>
+  <arg name="trackingCamYOffset" default="0"/>
+  <arg name="trackingCamZOffset" default="0"/>
+  <arg name="trackingCamScale" default="1.0"/>
+  <arg name="vehicleX" default="0"/>
+  <arg name="vehicleY" default="0"/>
+  <arg name="vehicleZ" default="4.0"/>
+  <arg name="vehicleYaw" default="0"/>
+  <arg name="use_gazebo" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
+  <arg name="world_name" default="office"/>
+  <arg name="realtime_factor" default="1.0"/>
+
+  <include file="$(find ps3joy)/launch/ps3.launch" />
+  
+  <!-- <include file="$(find airsim_utils)/launch/depth_image_proc.launch" /> -->
+
+  <node pkg="airsim_utils" name="airsim_bridge" type="airsim_bridge.py" output="screen" />
+  
+<!-- 
+  <include file="$(find control_tuner)/launch/control_tuner.launch" >
+    <param name="stateEstimationTopic" value="$(arg stateEstimationTopic)" />
+    <param name="trackingCamBackward" value="$(arg trackingCamBackward)" />
+    <param name="trackingCamXOffset" value="$(arg trackingCamXOffset)" />
+    <param name="trackingCamYOffset" value="$(arg trackingCamYOffset)" />
+    <param name="trackingCamZOffset" value="$(arg trackingCamZOffset)" />
+    <param name="trackingCamScale" value="$(arg trackingCamScale)" />
+  </node> -->
+
+
+</launch>
